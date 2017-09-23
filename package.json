@@ -1,5 +1,5 @@
 {
-  "name": "REST Map Countries",
+  "name": "rest-map-countries",
   "version": "1.0.0",
   "description": "Just a bit of fun with Google Maps and restcountries.eu",
   "main": "index.js",

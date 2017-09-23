@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="customDirective">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Stack Setup</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGMAwdfPDm9ZsKKz68wevduiVTGr-6X8M">
+    </script>
+    <!-- inject:js -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body>
+    <main ng-controller="Main as main" class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-half">
+            <google-map center="main.mapCenter" map-click="main.selectCountryByCode(countryCode)"></google-map>
+          </div>
+          <div class="column is-half countries">
+            <div class="columns is-multiline">
+              <div class="column is-half" ng-repeat="country in main.countries">
+                <country-card
+                  id="{{ country.alpha2Code }}"
+                  country="country"
+                  ng-click="main.selectCountry(country)">
+                </country-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
